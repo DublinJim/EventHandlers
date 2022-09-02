@@ -2,7 +2,6 @@ package com.example.eventhandlers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -25,7 +24,6 @@ public class HelloController implements Initializable {
 
     @FXML
     private BorderPane mainPane;
-    private ActionEvent actionEvent;
     private Boolean notBlack;
 
     public HelloController() {
@@ -54,7 +52,7 @@ public class HelloController implements Initializable {
     }
 
 
-    public void doThis(ActionEvent actionEvent) {
+    public void doThis() {
 
     }
 }
