@@ -45,12 +45,9 @@ public class HelloController implements Initializable {
         });
         btn1.setOnAction((poi) -> {
             lbl1.setText("Did something !!");
-            System.out.println(lbl1.getTextFill());
-            if (lbl1.textFillProperty().equals(Color.WHITE)) {
-                System.out.println("Change Color");
+            if (notBlack) {
                 lbl1.setTextFill(Color.BLACK);
-            } else {
-                System.out.println("Not in the loop ");
+                notBlack=false;
             }
         });
 
