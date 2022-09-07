@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
@@ -24,29 +25,45 @@ public class HelloController implements Initializable {
 
     @FXML
     private BorderPane mainPane;
-    private Boolean notBlack;
+    private Boolean isBlack;
 
     public HelloController() {
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        lbl1.setText("This is a label to display stuff");
-
+        lbl1.setText("This is text");
+        lbl1.autosize();
+        lbl1.setAlignment(Pos.CENTER);
+        btn2.setText("Set text white");
+        btn1.setText("Set text black");
+        isBlack = true;
         btn2.setOnAction((event) -> {
-            btn2.setText("I fixed myself !!");
+
             mainPane.setBackground(
                 new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY,
                     Insets.EMPTY)));
-            lbl1.setTextFill(Color.WHITE);
-            notBlack=true;
-        });
-        btn1.setOnAction((poi) -> {
-            lbl1.setText("Did something !!");
-            if (notBlack) {
-                lbl1.setTextFill(Color.BLACK);
-                notBlack=false;
+            if (isBlack) {
+                lbl1.setTextFill(Color.WHITE);
+                lbl1.setText("Now I am white");
+                isBlack = false;
             }
+
+
+        });
+
+        btn1.setOnAction((poi) -> {
+            mainPane.setBackground(
+                new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY,
+                    Insets.EMPTY)));
+
+            if (!isBlack) {
+                lbl1.setTextFill(Color.BLACK);
+                lbl1.setText("Now I am black");
+                isBlack = true;
+            }
+
+
         });
 
     }
