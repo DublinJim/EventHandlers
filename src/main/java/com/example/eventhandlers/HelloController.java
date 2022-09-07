@@ -38,11 +38,10 @@ public class HelloController implements Initializable {
         btn2.setText("Set text white");
         btn1.setText("Set text black");
         isBlack = true;
-        btn2.setOnAction((event) -> {
+        btn2.setOnAction((e) -> {
 
-            mainPane.setBackground(
-                new Background(new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY,
-                    Insets.EMPTY)));
+            mainPane.setBackground(new Background(
+                new BackgroundFill(Color.BLUEVIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
             if (isBlack) {
                 lbl1.setTextFill(Color.WHITE);
                 lbl1.setText("Now I am white");
@@ -52,10 +51,9 @@ public class HelloController implements Initializable {
 
         });
 
-        btn1.setOnAction((poi) -> {
+        btn1.setOnAction((e) -> {
             mainPane.setBackground(
-                new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY,
-                    Insets.EMPTY)));
+                new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
 
             if (!isBlack) {
                 lbl1.setTextFill(Color.BLACK);
